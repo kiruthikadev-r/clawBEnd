@@ -44,15 +44,15 @@ router.post('/orders', auth(), async (req, res) => {
         const orderProducts = [];
 
         for (const item of products) {
-            // Find the product by ID
+            
             const product = await Product.findById(item.id);
             if (!product) {
                 return res.status(404).send(`Product with ID ${item.id} not found`);
             }
 
-            // Prepare the order product object
+            
             orderProducts.push({
-                productId: item.id, // Ensure this matches the schema
+                productId: item.id, 
                 name: item.name,
                 weight: item.weight,
                 price: parseFloat(item.price.replace('₹', '')),
@@ -60,11 +60,11 @@ router.post('/orders', auth(), async (req, res) => {
                 image: item.image
             });
 
-            // Calculate total amount
+            
             totalAmount += parseFloat(item.price.replace('₹', '')) * item.quantity;
         }
 
-        // Create and save the order
+
         const order = new Order({
             userId: req.user._id,
             products: orderProducts,
