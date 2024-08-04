@@ -29,7 +29,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/kiruthikadev-r/clawBEnd
+git clone https://github.com/kiruthikadev-r/clawBEnd.git
 cd ecommerce-platform/backend
 Install dependencies:
 
