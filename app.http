@@ -1,0 +1,153 @@
+GET localhost:5000/products
+
+
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+    "username": "priya",
+    "email": "dreamwebinfo79@gmail.com",
+    "password": "1234@Priya",
+    "role":"admin"
+}
+
+###
+
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+    "username": "Jeevan",
+    "email": "jeevenkumar2003@gmail.com",
+    "password": "1234@Priya",
+    "role":"user"
+}
+
+###
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    
+    "email": "priyakiruthi21@gmail.com",
+    "password": "1234@Priya"
+    
+}
+
+
+###
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    
+    "email": "jeevenkumar2003@gmail.com",
+    "password": "1234@Priya"
+    
+}
+
+
+### 
+GET http://localhost:5000/products/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmFiNmQ5OTQ2NWUxNmMzNjQxYTUwYjgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjI1MTk2MjB9.OntXEd5qvs2fCK4Bc-SfU77fe_EqB8X8qFt48-4sLrE
+
+###
+POST http://localhost:5000/products/category/Cold%20Drinks%20%26%20Juices/product
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmFiNmQ5OTQ2NWUxNmMzNjQxYTUwYjgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjI1OTQ0NDd9.0DoAb_ilfKtCHDf68-l8ReZclXaeeMicl4aJO31PyAY
+
+{
+    "id": 789,
+    "name": "waterMelonJuice",
+    "weight": "140l",
+    "price": "2999",
+    "image": "https://justhomemade.wordpress.com/wp-content/uploads/2011/01/pongal-chutney-manjal.jpg"
+}
+
+###
+PUT http://localhost:5000/products/category/Fruits%20%26%20Vegetables/product/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmFiNmQ5OTQ2NWUxNmMzNjQxYTUwYjgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjI3NTA5NDN9.hnyZpGVskBsH6L59Rx3oai42JN8xm_zaGntFG1tSbbU
+
+{
+    "id":"1",
+    "name": "Orange",
+    "weight": "1kg",
+    "price": "₹10",
+    "image": "https://new-assets.ccbp.in/frontend/react-js/nxt-mart-app/image_1.jpg"
+}
+
+
+###
+POST http://localhost:5000/payment
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmFiNmQ5OTQ2NWUxNmMzNjQxYTUwYjgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjI1OTQ0NDd9.0DoAb_ilfKtCHDf68-l8ReZclXaeeMicl4aJO31PyAY
+
+{
+  "amount": 5000,
+  "token": "tok_visa" 
+  }
+
+
+### 
+GET http://localhost:5000/products/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmFiNmQ5OTQ2NWUxNmMzNjQxYTUwYjgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjI1MTk2MjB9.OntXEd5qvs2fCK4Bc-SfU77fe_EqB8X8qFt48-4sLrE
+
+###
+GET  http://localhost:5000/orders/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmFiNmQ5OTQ2NWUxNmMzNjQxYTUwYjgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjI1OTQ0NDd9.0DoAb_ilfKtCHDf68-l8ReZclXaeeMicl4aJO31PyAY
+
+{
+    "products": [
+        {
+            "category": "Fruits & Vegetables",
+            "id": 1,
+            "name": "Real Fruit Power Juice - Cranberry",
+            "weight": "1L",
+            "price": "₹45.69",
+            "image": "https://new-assets.ccbp.in/frontend/react-js/nxt-mart-app/image_21.jpg",
+            "quantity": 2
+        },
+        {
+            "category": "Cold Drinks & Juices",
+            "id": 14,
+            "name": "Guava Juice - 1L",
+            "weight": "1L",
+            "price": "₹60.00",
+            "image": "https://new-assets.ccbp.in/frontend/react-js/nxt-mart-app/image_4.jpg",
+            "quantity": 1
+        },
+        {
+            "category": "Fruits & Vegetables",
+            "id": 2,
+            "name": "Orange Juice - 500ml",
+            "weight": "500ml",
+            "price": "₹30.00",
+            "image": "https://new-assets.ccbp.in/frontend/react-js/nxt-mart-app/image_1.jpg",
+            "quantity": 3
+        }
+    ]
+}
+
+
+
+###
+POST http://localhost:5000/payment/create-order
+
+###
+POST http://localhost:5000/payment/status/T32449953747
+
+###
+POST http://localhost:5000/payment/api/pay 
+Content-Type: application/json
+
+{
+    "transactionId": "T32449953747",
+    "userId": "b0b6555d-637f-45d4-9f96-3aad3bd54404",
+    "name": "jeevan",
+    "amount": 199,
+    "number": "9999999999"
+}
