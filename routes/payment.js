@@ -20,7 +20,7 @@ console.log('PAYPAL_SECRET', PAYPAL_SECRET);
 console.log('PAYPAL_CLIENT', PAYPAL_CLIENT);
 
 
-// Stripe payment route
+
 router.post('/', auth(), async (req, res) => {
     const { amount, token } = req.body;
 
@@ -39,7 +39,7 @@ router.post('/', auth(), async (req, res) => {
     }
 });
 
-// PayPal create order route
+
 router.post('/create-order', async (req, res) => {
     const order = {
         intent: 'CAPTURE',
@@ -70,7 +70,7 @@ router.post('/create-order', async (req, res) => {
         res.status(500).send({ success: false, error: error.message });
     }
 });
-// PayPal capture order route
+
 router.post('/capture-order', async (req, res) => {
     const { orderID } = req.body;
 
